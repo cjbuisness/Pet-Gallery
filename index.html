@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cal's Pet Gallery</title>
+    <link rel="stylesheet" href="ajaxpets.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="ajaxpets.js"></script>
+    <style>
+      body {
+        background: url("https://example.com/starry-background.jpg") no-repeat
+          center center fixed;
+        background-size: cover;
+        color: #fff;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      }
+      header {
+        background-color: rgba(0, 0, 128, 0.7);
+        border-radius: 15px;
+        padding: 30px;
+        margin-bottom: 40px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        animation: fadeIn 1.5s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .form-check-label {
+        font-size: 1.5rem;
+        animation: pulse 2s infinite;
+        transition: color 0.3s;
+      }
+      .form-check-label:hover {
+        color: rgba(255, 215, 0, 1); /* Gold on hover */
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+      }
+      #pictures img {
+        border: 3px solid rgba(255, 255, 255, 0.8);
+        border-radius: 15px;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+      #pictures img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(255, 215, 0, 1); /* Gold glow on hover */
+      }
+      footer {
+        background-color: rgba(50, 50, 50, 0.8);
+        border-radius: 15px;
+        margin-top: 40px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        animation: slideUp 1s ease-in-out;
+      }
+      @keyframes slideUp {
+        from {
+          transform: translateY(20px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+      footer p {
+        font-style: italic;
+        text-align: center;
+      }
+      .star {
+        position: absolute;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 50%;
+        animation: twinkle 1.5s infinite alternate;
+      }
+      @keyframes twinkle {
+        0% {
+          opacity: 0.8;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="text-center">
+      <h1 class="display-4">🚀 Cal's Pet Galaxy!</h1>
+      <p class="lead">
+        Your intergalactic destination for adorable puppies and kitties!
+      </p>
+    </header>
+    <main class="container">
+      <div class="row">
+        <div class="col-12 text-center mb-4">
+          <p class="font-weight-bold">Select your favorite space pet:</p>
+        </div>
+      </div>
+
+      <div class="row justify-content-center mb-4">
+        <div class="col-auto">
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="animal"
+              id="kitty"
+              value="kitty"
+            />
+            <label class="form-check-label" for="kitty">🐱 Kitties</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="animal"
+              id="puppy"
+              value="puppy"
+            />
+            <label class="form-check-label" for="puppy">🐶 Puppies</label>
+          </div>
+        </div>
+      </div>
+
+      <div id="pictures" class="row"></div>
+    </main>
+
+    <footer class="text-center py-3">
+      <div class="container">
+        <p class="mb-0">© 2024 - Cal's Silky Designs, All Rights Reserved</p>
+        <p class="small">
+          Pulled up by my own <a href="#" class="text-rose">BOOTSTRAP</a> 🌌
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+      // Generate stars in the background
+      for (let i = 0; i < 100; i++) {
+        const star = document.createElement("div");
+        star.className = "star";
+        const size = Math.random() * 3 + 2; // Random size between 2 and 5
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        star.style.top = `${Math.random() * 100}vh`;
+        star.style.left = `${Math.random() * 100}vw`;
+        document.body.appendChild(star);
+      }
+    </script>
+  </body>
+</html>
